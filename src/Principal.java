@@ -13,6 +13,7 @@ public class Principal {
       System.out.println("5) Dolar Americano (USD) -> Peso Colombiano (COP)");
       System.out.println("6) Peso Colombiano (COP) -> Dolar Americano (USD)");
       System.out.println("7) Salir del Programa");
+      System.out.println("Ingrese una opcion");
 
       Scanner scanner = new Scanner(System.in);
       String opcion = scanner.nextLine();
