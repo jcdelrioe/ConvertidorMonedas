@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Principal {
   public static void main(String[] args) {
     Boolean repetir = true;
+    CambioMoneda busqueda;
+    Double valor;
+
     System.out.println("Bienvenido al convertidor de monedas");
     ConsultaMoneda consultaMonedasAConvertir = new ConsultaMoneda();
 
@@ -20,37 +23,77 @@ public class Principal {
       String opcion = scanner.nextLine();
       switch (opcion){
         case "1":
-          System.out.println("=================================");
+          System.out.println("=========================================");
           System.out.println("Convertir (USD) a (ARG)");
           System.out.println("Ingrese la cantidad de USD a convertir: ");
-          Double valor = scanner.nextDouble();
+          valor = scanner.nextDouble();
 
-          CambioMoneda busqueda = consultaMonedasAConvertir.buscarCambioMoneda("USD", "ARS");
+          busqueda = consultaMonedasAConvertir.buscarCambioMoneda("USD", "ARS");
+
+          System.out.println(valor + " " + busqueda.base_code() + " son " + valor * busqueda.conversion_rate() + " " + busqueda.target_code());
+          System.out.println("=========================================");
+          break;
+        case "2":
+          System.out.println("=========================================");
+          System.out.println("Convertir (ARS) a (USD)");
+          System.out.println("Ingrese la cantidad de ARS a convertir: ");
+          valor = scanner.nextDouble();
+
+          busqueda = consultaMonedasAConvertir.buscarCambioMoneda("ARS", "USD");
+
+          System.out.println(valor + " " + busqueda.base_code() + " son " + valor * busqueda.conversion_rate() + " " + busqueda.target_code());
+          System.out.println("=========================================");
+          break;
+        case "3":
+          System.out.println("=========================================");
+          System.out.println("Convertir (USD) a (BRL)");
+          System.out.println("Ingrese la cantidad de USD a convertir: ");
+          valor = scanner.nextDouble();
+
+          busqueda = consultaMonedasAConvertir.buscarCambioMoneda("USD", "BRL");
+
+          System.out.println(valor + " " + busqueda.base_code() + " son " + valor * busqueda.conversion_rate() + " " + busqueda.target_code());
+          System.out.println("=========================================");
+          break;
+        case "4":
+          System.out.println("=========================================");
+          System.out.println("Convertir (BRL) a (USD)");
+          System.out.println("Ingrese la cantidad de BRL a convertir: ");
+          valor = scanner.nextDouble();
+
+          busqueda = consultaMonedasAConvertir.buscarCambioMoneda("BRL", "USD");
+
+          System.out.println(valor + " " + busqueda.base_code() + " son " + valor * busqueda.conversion_rate() + " " + busqueda.target_code());
+          System.out.println("=========================================");
+          break;
+        case "5":
+          System.out.println("=========================================");
+          System.out.println("Convertir (USD) a (COP)");
+          System.out.println("Ingrese la cantidad de USD a convertir: ");
+          valor = scanner.nextDouble();
+
+          busqueda = consultaMonedasAConvertir.buscarCambioMoneda("USD", "COP");
+
+          System.out.println(valor + " " + busqueda.base_code() + " son " + valor * busqueda.conversion_rate() + " " + busqueda.target_code());
+          System.out.println("=========================================");
+          break;
+        case "6":
+          System.out.println("=========================================");
+          System.out.println("Convertir (COP) a (USD)");
+          System.out.println("Ingrese la cantidad de COP a convertir: ");
+          valor = scanner.nextDouble();
+
+          busqueda = consultaMonedasAConvertir.buscarCambioMoneda("COP", "USD");
 
           System.out.println(valor + " " + busqueda.base_code() + " son " + valor * busqueda.conversion_rate() + " " + busqueda.target_code());
           System.out.println("=================================");
           break;
-        case "2":
-          System.out.println("Opcion 2");
-          break;
-        case "3":
-          System.out.println("Opcion 3");
-          break;
-        case "4":
-          System.out.println("Opcion 4");
-          break;
-        case "5":
-          System.out.println("Opcion 5");
-          break;
-        case "6":
-          System.out.println("Opcion 6");
-          break;
         case "7":
-          System.out.println("Salida");
+          System.out.println("Gracias por utilizar nuestro convertidor");
           repetir = false;
           break;
         default:
-          System.out.println("Ingrese una opcion correcta");
+          System.out.println("Ingrese una opcion correcta ");
       }
     }
   }
